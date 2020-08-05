@@ -1,0 +1,89 @@
+[
+    {
+      "1" : "The International Literacy Day is observed on",
+      "2" : "The language of Lakshadweep. a Union Territory of India, is",
+      "3" : "In which group of places the Kumbha Mela is held every twelve years?",
+      "4" : "Bahubali festival is related to",
+      "5" : "Which day is observed as the World Standards  Day?",
+      "6" : "Which of the following was the theme of the World Red Cross and Red Crescent Day?",
+      "7" : "September 27 is celebrated every year as",
+      "8" : "Who is the author of 'Manas Ka-Hans' ?",
+      "9" : "The death anniversary of which of the following leaders is observed as Martyrs' Day?",
+      "10" : "Who is the author of the epic 'Meghdoot?"
+    },
+    {
+      "1" : {
+          "a" : "Sep 8",
+          "b" : "Nov 28",
+          "c" : "May 2",
+          "d" : "Sep 22"	      
+            },
+      "2" : {
+          "a" : "Tamil",
+          "b" : "Hindi",
+          "c" : "Malayalam",
+          "d" : "Telugu"	      
+            },
+      "3" : {
+          "a" : "Ujjain. Purl; Prayag. Haridwar",
+          "b" : "Prayag. Haridwar, Ujjain,. Nasik",
+          "c" : "Rameshwaram. Purl, Badrinath. Dwarika",
+          "d" : "Chittakoot, Ujjain, Prayag,'Haridwar"      
+            },
+      "4" : {
+          "a" : "Islam",
+          "b" : "Hinduism",
+          "c" : "Buddhism",
+          "d" : "Jainism"	      
+            },
+      "5" : {
+          "a" : "June 26",
+          "b" : "Oct 14",
+          "c" : "Nov 15",
+          "d" : "Dec 2"	      
+            },
+      "6" : {
+          "a" : "Dignity for all - focus on women",
+          "b" : "Dignity for all - focus on Children",
+          "c" : "Focus on health for all",
+          "d" : "Nourishment for all-focus on children'"      
+            },
+      "7" : {
+          "a" : "Teachers' Day",
+          "b" : "National Integration Day",
+          "c" : "World Tourism Day",
+          "d" : "International Literacy Day"	      
+            },
+      "8" : {
+          "a" : "Khushwant Singh",
+          "b" : "Prem Chand",
+          "c" : "Jayashankar Prasad",
+          "d" : "Amrit Lal Nagar"	      
+            },
+      "9" : {
+          "a" : "Smt. Indira Gandhi",
+          "b" : "PI. Jawaharlal Nehru",
+          "c" : "Mahatma Oandhi",
+          "d" : "Lal Bahadur Shastri"	      
+            },
+      "10" : {
+          "a" : "Vishakadatta",
+          "b" : "Valmiki",
+          "c" : "Banabhatta",
+          "d" : "Kalidas"	      
+            }
+    },
+    {
+      "1" : "Sep 8",
+      "2" : "Malayalam",
+      "3" : "Prayag. Haridwar, Ujjain,. Nasik",
+      "4" : "Jainism",
+      "5" : "Oct 14",
+      "6" : "Dignity for all - focus on Children",
+      "7" : "World Tourism Day",
+      "8" : "Amrit Lal Nagar",
+      "9" : "Mahatma Oandhi",
+      "10" : "Kalidas"
+    }
+  
+  ]
