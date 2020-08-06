@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kbc_app/Animation/FadeAnimation.dart';
 import 'package:kbc_app/resultpage.dart';
 
 class QuizPage extends StatefulWidget {
@@ -56,6 +57,9 @@ class _QuizPageNewState extends State<QuizPageNew> {
   int timer = 30;
   String showtimer = "30";
   bool cancletimer = false;
+  Color colortoshowtimer = Colors.white;
+  Color even = Colors.white;
+  Color odd = Colors.red;
 
   _QuizPageNewState(this.mydata);
 
@@ -78,14 +82,26 @@ class _QuizPageNewState extends State<QuizPageNew> {
       setState(() {
         if (timer < 1) {
           t.cancel();
+          colortoshowtimer = Colors.white;
           nextquestion();
         } else if (cancletimer == true) {
           t.cancel();
         } else {
+          colorchange();
           timer -= 1;
         }
         showtimer = timer.toString();
       });
+    });
+  }
+
+  void colorchange() {
+    setState(() {
+      if (timer < 12 && timer % 2 == 0) {
+        colortoshowtimer = even;
+      } else if (timer < 12) {
+        colortoshowtimer = odd;
+      }
     });
   }
 
@@ -132,13 +148,16 @@ class _QuizPageNewState extends State<QuizPageNew> {
       ),
       child: MaterialButton(
         onPressed: () => checkanswer(k),
-        child: Text(
-          mydata[1][i.toString()][k],
-          style: TextStyle(
-            fontSize: 17,
-            color: Colors.white,
+        child: FadeAnimation(
+          1.4,
+          Text(
+            mydata[1][i.toString()][k],
+            style: TextStyle(
+              fontSize: 17,
+              color: Colors.white,
+            ),
+            maxLines: 1,
           ),
-          maxLines: 1,
         ),
         color: btncolor[k],
         elevation: 4,
@@ -192,52 +211,139 @@ class _QuizPageNewState extends State<QuizPageNew> {
         );
       },
       child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: Container(
+        body: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              colors: [
+                Colors.teal[400],
+                Colors.teal[500],
+                Colors.teal[600],
+                Colors.teal[700],
+                Colors.teal[700],
+                Colors.teal[600],
+                Colors.teal[500],
+                Colors.teal[400],
+                Colors.blue[400],
+                Colors.blue[500],
+                Colors.blue[600],
+                Colors.blue[700],
+                Colors.blue[800],
+              ],
+            ),
+          ),
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 70,
+              ),
+              Container(
+                width: 300,
+                height: 100,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    colors: [
+                      Colors.red[200],
+                      Colors.red[300],
+                      Colors.red[500],
+                      Colors.red[600],
+                      Colors.red[700],
+                      Colors.red[700],
+                      Colors.red[600],
+                      Colors.red[500],
+                      Colors.red[300],
+                      Colors.red[200],
+                    ],
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(30),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 25,
+                      offset: Offset(5, 8),
+                    ),
+                  ],
+                ),
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    mydata[0][i.toString()],
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
+                  child: FadeAnimation(
+                    1,
+                    Text(
+                      mydata[0][i.toString()],
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    choiceButton("a"),
-                    choiceButton("b"),
-                    choiceButton("c"),
-                    choiceButton("d"),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  showtimer,
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w600,
+              Expanded(
+                flex: 3,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      choiceButton("a"),
+                      choiceButton("b"),
+                      choiceButton("c"),
+                      choiceButton("d"),
+                    ],
                   ),
                 ),
               ),
-            ),
-          ],
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    colors: [
+                      Colors.green[500],
+                      Colors.green[600],
+                      Colors.green[700],
+                      Colors.green[800],
+                      Colors.green[800],
+                      Colors.green[700],
+                      Colors.green[600],
+                      Colors.green[500],
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(60),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 25,
+                    ),
+                  ],
+                ),
+                alignment: Alignment.bottomCenter,
+                child: Center(
+                  child: FadeAnimation(
+                    1.6,
+                    Text(
+                      showtimer,
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: colortoshowtimer,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
     );

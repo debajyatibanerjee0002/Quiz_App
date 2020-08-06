@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kbc_app/Animation/FadeAnimation.dart';
 
 import 'home.dart';
 
@@ -26,14 +27,64 @@ class _SplasScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
-      body: Center(
-        child: Text(
-          'KBC',
-          style: TextStyle(
-            fontSize: 60.0,
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            letterSpacing: 10,
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            colors: [
+              Colors.cyan[200],
+              Colors.cyan[300],
+              Colors.cyan[600],
+              Colors.cyan[700],
+              Colors.lightGreen[700],
+              Colors.lightGreen[600],
+              Colors.lightGreen[400],
+              Colors.lightGreen[300],
+            ],
+          ),
+        ),
+        child: Align(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FadeAnimation(
+                1.5,
+                Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      colors: [
+                        Colors.red[200],
+                        Colors.red[300],
+                        Colors.red[500],
+                        Colors.red[600],
+                        Colors.red[600],
+                        Colors.red[500],
+                        Colors.red[300],
+                        Colors.red[200],
+                      ],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blueGrey[800],
+                        blurRadius: 25,
+                        offset: Offset(7, 12),
+                      ),
+                    ],
+                  ),
+                  child: FadeAnimation(
+                    2,
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Image.asset('assets/logo.png'),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

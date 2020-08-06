@@ -19,28 +19,84 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Container(
-              alignment: Alignment.center,
-              child: checkmarks(),
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            colors: [
+              Colors.teal[400],
+              Colors.teal[500],
+              Colors.teal[600],
+              Colors.teal[700],
+              Colors.teal[700],
+              Colors.teal[600],
+              Colors.teal[500],
+              Colors.teal[400],
+              Colors.blue[400],
+              Colors.blue[500],
+              Colors.blue[600],
+              Colors.blue[700],
+              Colors.blue[800],
+            ],
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              child: Text(
-                "Congratulation your score is $marks",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500),
+        ),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                alignment: Alignment.center,
+                child: checkmarks(),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              height: 80,
+              width: 320,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  colors: [
+                    Colors.cyan[200],
+                    Colors.cyan[300],
+                    Colors.cyan[600],
+                    Colors.cyan[700],
+                    Colors.lightGreen[700],
+                    Colors.lightGreen[600],
+                    Colors.lightGreen[400],
+                    Colors.lightGreen[300],
+                  ],
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 25,
+                    offset: Offset(5, 10),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  "Congratulation your score is -> $marks",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
