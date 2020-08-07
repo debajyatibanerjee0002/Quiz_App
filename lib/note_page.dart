@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kbc_app/Animation/FadeAnimation.dart';
+import 'package:kbc_app/Animation/FadeAnimationOne.dart';
 import 'dart:async';
 
 import 'package:kbc_app/quiz_page.dart';
@@ -152,8 +153,8 @@ class _NotePageState extends State<NotePage> {
                 ],
               ),
               child: Center(
-                child: FadeAnimation(
-                  1.4,
+                child: FadeAnimationOne(
+                  1,
                   Text(
                     showtimer,
                     style: TextStyle(

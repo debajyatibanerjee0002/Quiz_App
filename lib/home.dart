@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kbc_app/note_page.dart';
 import './Animation/FadeAnimation.dart';
+import './Animation/FadeAnimationOne.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     child: Center(
-                      child: FadeAnimation(
+                      child: FadeAnimationOne(
                         1.8,
                         Text(
                           'Are You Ready !!',
@@ -136,83 +137,86 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    colors: [
-                      Colors.teal[400],
-                      Colors.teal[500],
-                      Colors.teal[600],
-                      Colors.teal[700],
-                      Colors.teal[700],
-                      Colors.teal[600],
-                      Colors.teal[500],
-                      Colors.teal[400],
+              child: FadeAnimationOne(
+                2,
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      colors: [
+                        Colors.teal[400],
+                        Colors.teal[500],
+                        Colors.teal[600],
+                        Colors.teal[700],
+                        Colors.teal[700],
+                        Colors.teal[600],
+                        Colors.teal[500],
+                        Colors.teal[400],
+                      ],
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 25,
+                        offset: Offset(-5, -6),
+                      ),
                     ],
                   ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 25,
-                      offset: Offset(-5, -6),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    FadeAnimation(
-                      2,
-                      MaterialButton(
-                        // onLongPress: colorchange(1),
-                        onPressed: () {
-                          // colorchange(1);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => NotePage(),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      FadeAnimation(
+                        2,
+                        MaterialButton(
+                          // onLongPress: colorchange(1),
+                          onPressed: () {
+                            // colorchange(1);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NotePage(),
+                              ),
+                            );
+                          },
+                          color: Colors.greenAccent,
+                          elevation: 4,
+                          splashColor: Colors.green[500],
+                          highlightColor: Colors.green[900],
+                          child: FadeAnimation(
+                            2.2,
+                            Icon(
+                              Icons.assistant_photo,
+                              color: iconcolor,
                             ),
-                          );
-                        },
-                        color: Colors.greenAccent,
-                        elevation: 4,
-                        splashColor: Colors.green[500],
-                        highlightColor: Colors.green[900],
-                        child: FadeAnimation(
-                          2.2,
-                          Icon(
-                            Icons.assistant_photo,
-                            color: iconcolor,
                           ),
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    FadeAnimation(
-                      2.6,
-                      Text(
-                        'START',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      SizedBox(
+                        height: 10,
+                      ),
+                      FadeAnimationOne(
+                        2.6,
+                        Text(
+                          'START',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

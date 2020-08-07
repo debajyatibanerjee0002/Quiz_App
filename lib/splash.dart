@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kbc_app/Animation/FadeAnimation.dart';
+import 'package:kbc_app/Animation/FadeAnimationOne.dart';
 
 import 'home.dart';
 
@@ -75,7 +76,7 @@ class _SplasScreenState extends State<SplashScreen> {
                       ),
                     ],
                   ),
-                  child: FadeAnimation(
+                  child: FadeAnimationOne(
                     2,
                     Padding(
                       padding: const EdgeInsets.all(15.0),

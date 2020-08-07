@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kbc_app/Animation/FadeAnimation.dart';
+import 'package:kbc_app/Animation/FadeAnimationOne.dart';
 import 'package:kbc_app/resultpage.dart';
 
 class QuizPage extends StatefulWidget {
@@ -148,17 +149,17 @@ class _QuizPageNewState extends State<QuizPageNew> {
       ),
       child: MaterialButton(
         onPressed: () => checkanswer(k),
-        child: FadeAnimation(
-          1.4,
-          Text(
-            mydata[1][i.toString()][k],
-            style: TextStyle(
-              fontSize: 17,
-              color: Colors.white,
-            ),
-            maxLines: 1,
+        // child: FadeAnimation(
+        // 1.4,
+        child: Text(
+          mydata[1][i.toString()][k],
+          style: TextStyle(
+            fontSize: 17,
+            color: Colors.white,
           ),
+          maxLines: 1,
         ),
+        // ),
         color: btncolor[k],
         elevation: 4,
         minWidth: 400,
@@ -182,27 +183,33 @@ class _QuizPageNewState extends State<QuizPageNew> {
         return showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Opps!!!'),
-            content: Text('You can\'n go back at this stage'),
+            title: FadeAnimationOne(1, Text('Opps!!!')),
+            content: FadeAnimation(1, Text('You can\'n go back at this stage')),
             actions: <Widget>[
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                color: Colors.green,
-                elevation: 4,
-                highlightColor: Colors.green[800],
-                child: Text(
-                  'OK',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
+              FadeAnimation(
+                1.2,
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  color: Colors.green,
+                  elevation: 4,
+                  highlightColor: Colors.green[800],
+                  child: FadeAnimationOne(
+                    1.2,
+                    Text(
+                      'OK',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20),
+                    ),
                   ),
                 ),
               ),
@@ -291,10 +298,10 @@ class _QuizPageNewState extends State<QuizPageNew> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      choiceButton("a"),
-                      choiceButton("b"),
-                      choiceButton("c"),
-                      choiceButton("d"),
+                      FadeAnimation(1.4, choiceButton("a")),
+                      FadeAnimation(1.5, choiceButton("b")),
+                      FadeAnimationOne(1.4, choiceButton("c")),
+                      FadeAnimationOne(1.5, choiceButton("d")),
                     ],
                   ),
                 ),
@@ -326,8 +333,8 @@ class _QuizPageNewState extends State<QuizPageNew> {
                 ),
                 alignment: Alignment.bottomCenter,
                 child: Center(
-                  child: FadeAnimation(
-                    1.6,
+                  child: FadeAnimationOne(
+                    2,
                     Text(
                       showtimer,
                       style: TextStyle(
