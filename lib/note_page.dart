@@ -66,6 +66,7 @@ class _NotePageState extends State<NotePage> {
               Colors.cyan[300],
               Colors.cyan[600],
               Colors.cyan[700],
+              Colors.cyan[700],
               Colors.lightGreen[700],
               Colors.lightGreen[600],
               Colors.lightGreen[400],
@@ -123,12 +124,45 @@ class _NotePageState extends State<NotePage> {
             SizedBox(
               height: 30,
             ),
-            Text(
-              showtimer,
-              style: TextStyle(
-                fontSize: 100,
-                color: colortoshow,
-                fontWeight: FontWeight.w600,
+            Container(
+              width: 130,
+              height: 130,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  colors: [
+                    Colors.blue[400],
+                    Colors.blue[500],
+                    Colors.blue[600],
+                    Colors.blue[700],
+                    Colors.blue[800],
+                    Colors.blue[800],
+                    Colors.blue[700],
+                    Colors.blue[600],
+                    Colors.blue[500],
+                    Colors.blue[400],
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(80),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 30,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: FadeAnimation(
+                  1.4,
+                  Text(
+                    showtimer,
+                    style: TextStyle(
+                      fontSize: 70,
+                      color: colortoshow,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],

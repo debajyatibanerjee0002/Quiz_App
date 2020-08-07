@@ -87,19 +87,21 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(10),
                     width: 300,
                     decoration: BoxDecoration(
-                      gradient:
-                          LinearGradient(begin: Alignment.topLeft, colors: [
-                        Colors.blue[400],
-                        Colors.blue[500],
-                        Colors.blue[600],
-                        Colors.blue[700],
-                        Colors.blue[800],
-                        Colors.blue[800],
-                        Colors.blue[700],
-                        Colors.blue[600],
-                        Colors.blue[500],
-                        Colors.blue[400],
-                      ]),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        colors: [
+                          Colors.blue[400],
+                          Colors.blue[500],
+                          Colors.blue[600],
+                          Colors.blue[700],
+                          Colors.blue[800],
+                          Colors.blue[800],
+                          Colors.blue[700],
+                          Colors.blue[600],
+                          Colors.blue[500],
+                          Colors.blue[400],
+                        ],
+                      ),
                       borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(20),
                         topLeft: Radius.circular(20),
@@ -108,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                         BoxShadow(
                           color: Colors.black,
                           blurRadius: 25,
-                          offset: Offset(5, 10),
+                          offset: Offset(5, 6),
                         ),
                       ],
                     ),
@@ -157,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                     BoxShadow(
                       color: Colors.black,
                       blurRadius: 25,
-                      offset: Offset(5, 6),
+                      offset: Offset(-5, -6),
                     ),
                   ],
                 ),
