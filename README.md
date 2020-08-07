@@ -12,7 +12,7 @@ HomePage
 <img height="400px" src="screenshort1.png"> -> <img height="400px" src="screenshort6.png">
 
 AlertPage
-<img height="400px" src="screenshort7.png">
+<img height="400px" src="screenshort7.png"> -> <img height="400px" src="screenshort12.png">
 
 QuizPage
 <img height="400px" src="screenshort4.png"> <img height="400px" src="screenshort2.png"> <img height="400px" src="screenshort3.png">
