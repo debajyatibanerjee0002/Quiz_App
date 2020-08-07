@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kbc_app/Animation/FadeAnimation.dart';
 import 'package:kbc_app/home.dart';
 
 // ignore: must_be_immutable
@@ -85,12 +86,15 @@ class Result extends StatelessWidget {
                 ],
               ),
               child: Center(
-                child: Text(
-                  "Congratulation your score is -> $marks",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w700,
+                child: FadeAnimation(
+                  1,
+                  Text(
+                    "Congratulation your score is -> $marks",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
@@ -107,9 +111,12 @@ class Result extends StatelessWidget {
           );
         },
         elevation: 5,
-        child: Icon(
-          Icons.home,
-          size: 35,
+        child: FadeAnimation(
+          1.2,
+          Icon(
+            Icons.home,
+            size: 35,
+          ),
         ),
         highlightElevation: 5,
         splashColor: Colors.blue[900],
