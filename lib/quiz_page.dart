@@ -83,7 +83,7 @@ class _QuizPageNewState extends State<QuizPageNew> {
       setState(() {
         if (timer < 1) {
           t.cancel();
-          colortoshowtimer = Colors.white;
+          // colortoshowtimer = Colors.white;
           nextquestion();
         } else if (cancletimer == true) {
           t.cancel();
@@ -107,6 +107,7 @@ class _QuizPageNewState extends State<QuizPageNew> {
   }
 
   void nextquestion() {
+    colortoshowtimer = Colors.white;
     cancletimer = false;
     timer = 30;
     setState(() {
